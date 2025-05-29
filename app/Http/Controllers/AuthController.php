@@ -50,7 +50,7 @@ class AuthController extends Controller
       ]
       ]);
 
-    echo 'success';
+    redirect()->to('/');
   }
 
 
