@@ -42,6 +42,11 @@
                                     {{ session('loginError') }}
                                 </div>
                             @endif
+                            @if(session('logoutMessage'))
+                            <div class="alert alert-success text-center">
+                                    {{ session('logoutMessage') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
 
