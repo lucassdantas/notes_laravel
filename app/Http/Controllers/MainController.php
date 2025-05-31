@@ -95,8 +95,7 @@ class MainController extends Controller
   {
     $id = Operations::decryptId($id);
     $note = Note::find($id);
-    $note->deleted_at = date('Y:m:d H:i:s');
-    $note->save();
+    $note->delete();
     return redirect()->route('home');
     
   }

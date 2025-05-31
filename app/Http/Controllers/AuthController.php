@@ -23,9 +23,7 @@ class AuthController extends Controller
       'text_password.required' => 'password é obrigatórioa',
       'text_password.min' => 'Mínimo de :min caractéres',
       'text_password.max' => 'Máx de :max caractéres',
-
     ]
-
   );
     $username = $request->input('text_username');
     $password = $request->input('text_password');
@@ -48,9 +46,9 @@ class AuthController extends Controller
         'id'=>$user->id,
         'username'=>$user->username
       ]
-      ]);
+    ]);
 
-    redirect()->to('/');
+    return redirect()->to('/');
   }
 
 
