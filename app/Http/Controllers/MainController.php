@@ -84,7 +84,14 @@ class MainController extends Controller
 
     return redirect()->route('home');
   }
+
   public function deleteNote($id)
+  {
+    $id = Operations::decryptId($id);
+    $note = Note::find($id);
+    return view('delete_note', ['note' => $note]);
+  }
+  public function deleteNoteConfirm($id)
   {
     $id = Operations::decryptId($id);
     Note::where('id', $id)->delete();
